@@ -21,6 +21,9 @@ export const setupRecaptcha = (containerId: string) => {
   return new RecaptchaVerifier(auth, containerId, {
     size: "invisible",
     callback: () => {},
+    "expired-callback": () => {
+      console.log("reCAPTCHA expired");
+    },
   });
 };
 
